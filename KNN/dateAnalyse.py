@@ -1,10 +1,11 @@
 #coding=UTF-8
 from numpy import *
-from KNNsample import training
+from KNN.KNNmain import training
 import operator
 
 def txtToMatrix(filename) :
     """
+    convert the data in txt to matrix
     :param filename: as defined...
     :return:
     """
@@ -22,6 +23,11 @@ def txtToMatrix(filename) :
     return originalData,labels
 
 def normalize(originalData):
+    """
+    regnerate the Data
+    :param originalData:
+    :return: new Matrix
+    """
     minParam = originalData.min(0)
     maxParam = originalData.max(0)
     range = maxParam-minParam
@@ -29,20 +35,23 @@ def normalize(originalData):
     m = originalData.shape[0]
     normData = originalData - tile(minParam,(m,1))
     normData = normData/tile(range,(m,1))
-    return normData,range,minParam
+    return normData
 
 def dateClassTest():
+    """
+    :return: the result
+    """
+    # define the ratio of the data for judgement
     hoRatio = 0.05
     datingDataMat, datingLabels = txtToMatrix('dateData1.txt')  # load data set from file
-    normMat, ranges, minVals = normalize(datingDataMat)
+    normMat = normalize(datingDataMat)
     m = normMat.shape[0]
     numTestVecs = int(m * hoRatio)
     errorCount = 0.0
     for i in range(numTestVecs):
-        # print(normMat[i,:])
-        # print(shape(normMat[numTestVecs:m, :])[0])
-        #print(normMat[numTestVecs:m, :])
-        classifierResult = training(normMat[i, :], normMat[numTestVecs:m, :], datingLabels[numTestVecs:m], 5)
+        print(normMat[i])
+        # 5 is knn's k
+        classifierResult = training(normMat[i], normMat[numTestVecs:m], datingLabels[numTestVecs:m], 5)
         print("the classifier came back with: %s, the real answer is: %s, result is :%s" % (
             classifierResult, datingLabels[i], classifierResult == datingLabels[i]))
         if (classifierResult != datingLabels[i]): errorCount += 1.0

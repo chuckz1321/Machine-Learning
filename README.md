@@ -1,7 +1,5 @@
 # Machine-Learning
-Basic Algorithm
-
-
+###### Basic Algorithm
 This repository is relative to the coming study in Machine Learing.
 
 P.S.
