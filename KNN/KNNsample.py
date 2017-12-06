@@ -17,9 +17,9 @@ def createOriData():
     dataLabels = ['A','A','B','B']
     return data, dataLabels
 
-def training(point, oriData, labels, k):
+def training(underClassifyData, oriData, labels, k):
     """
-    :param point: index under classify
+    :param underClassifyData: index under classify
     :param oriData: original DataSet
     :param labels: original labels
     :param k: KNN's k
@@ -30,7 +30,7 @@ def training(point, oriData, labels, k):
     oriDataSize = oriData.shape[0]
     #tile() to generate matrix which has the same column and row with the origianl data
     #get the physical distance individually
-    trainingData = tile(point,(oriDataSize,1)) - oriData
+    trainingData = tile(underClassifyData,(oriDataSize,1)) - oriData
     #square the phy-distance
     sqTrainingData = trainingData ** 2
     #sum the row getting the sqDistance
