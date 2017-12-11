@@ -9,14 +9,14 @@ def training(underClassifyData, oriData, labels, k):
     :return: classifacation of the point
     """
 
-    #return the number of the origianl data
+    # return the number of the origianl data
     oriDataSize = oriData.shape[0]
-    #tile() to generate matrix which has the same column and row with the origianl data
-    #get the physical distance individually
+    # tile() to generate matrix which has the same column and row with the origianl data
+    # get the physical distance individually
     trainingData = tile(underClassifyData,(oriDataSize,1)) - oriData
-    #square the phy-distance
+    # square the phy-distance
     sqTrainingData = trainingData ** 2
-    #sum the row getting the sqDistance
+    # sum the row getting the sqDistance
     sqDistance = sqTrainingData.sum(axis=1)
     # extract the sqDistance getting the distance
     distance = sqDistance ** 0.5
