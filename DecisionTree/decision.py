@@ -2,12 +2,14 @@ from math import log
 
 def calcShannon(data):
     """
+    caculate the shannon entropy
     :param data:
     :return: ShannonEnt
     ent = - sum(p(xi)*log(p(xi),2))
     """
     num = len(data)
     labelData = {}
+    #get the result map
     for aData in data:
         tempLabel = aData[-1]
         if tempLabel not in labelData.keys():
@@ -21,6 +23,7 @@ def calcShannon(data):
 
 def getSubInfo(data,index,value):
     """
+
     :param data:
     :param index: which column
     :param value: the value
@@ -52,13 +55,14 @@ def getBestFeature(data):
     return bestFeature
 def testData():
     data=[
-        [1, 1, 'yes'],
-        [1, 0, 'no'],
-        [0, 1, 'no']
+        [1, 1, 1, '√'],
+        [1, 0, 0, '√'],
+        [0, 0, 1, '√'],
+        [0, 0, 0, '×'],
+        [0, 1, 0, '×'],
+        [1, 1, 0, '×']
     ]
-    return data
 
+    labels = ['long','fee','six']
+    return data,labels
 
-
-if __name__ == "__main__":
-    print(getBestFeature(testData()))
