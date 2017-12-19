@@ -14,6 +14,7 @@ def classify(tree, labels, testData):
 
 if __name__=='__main__':
     data,labels = testData()
-    tree = createTree(data,labels)
-    data,labels = testData()
+    #
+    label = labels[:]
+    tree = createTree(data,label)
     print(classify(tree,labels,[0, 0, 1]))
