@@ -23,7 +23,15 @@ def calcShannon(data):
 
 def getSubInfo(data,index,value):
     """
-
+    data:[
+        ['1','1','2'],
+        ['1','2','2'],
+        ['1','3','1']
+    ]
+    index: 2
+    value: 2
+    output:
+    {['1','1'],['1','2']
     :param data:
     :param index: which column
     :param value: the value
@@ -37,6 +45,11 @@ def getSubInfo(data,index,value):
             subSet.append(tempData)
     return subSet
 def getBestFeature(data):
+    """
+    get the best feature which make the shannon entropy largest
+    :param data:
+    :return:
+    """
     setFeaturesRange = len(data[0]) -1
     shannonPara = calcShannon(data)
     bestIndex = 0.0;bestFeature = -1
