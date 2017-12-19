@@ -2,6 +2,11 @@ from DecisionTree.decision import *
 import operator
 
 def majorCnt(classList):
+    """
+    not clear...
+    :param classList:
+    :return:
+    """
     classCount = {}
     for vote in classList:
         if vote not in classCount.keys():classCount[vote] = 0
