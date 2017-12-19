@@ -66,6 +66,7 @@ def getBestFeature(data):
             bestIndex = temp
             bestFeature = i
     return bestFeature
+
 def testData():
     data=[
         [1, 1, 1, '√'],
