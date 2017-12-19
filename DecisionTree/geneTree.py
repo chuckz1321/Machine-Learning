@@ -31,9 +31,6 @@ def createTree(data,labels):
         tree[bestFeatureLabel][value] = createTree(getSubInfo(data,bestFeature,value),subLabels)
     return tree
 
-
-
-
 if __name__ == "__main__":
     data,labels = testData()
     print(createTree(data,labels))
