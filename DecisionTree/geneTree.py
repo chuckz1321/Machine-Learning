@@ -3,7 +3,7 @@ import operator
 
 def majorCnt(classList):
     """
-    not clear...
+    if all the features are classified, select the most emerging result to be the final res
     :param classList:
     :return:
     """
