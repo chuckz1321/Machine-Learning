@@ -19,9 +19,13 @@ Edit on the morning of .
 
 Solve the issue of connection between pyChram and github.
 Indeed, VSS( not the gun in PUBG) and svn is dated.Github upup.
-From a rookie in python and git.
+From a rookie in python and git.:)
 Night!
 
+###### 27th Dec, 2017
 
-test
+Add the naive Bayesian to master branch.
+IELTS is coming. Tony ma.
+
+
 &copy;CopyRight by chuck
