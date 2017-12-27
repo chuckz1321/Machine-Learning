@@ -9,7 +9,7 @@ This repository is relative to the coming study in Machine Learing.
 
 ###### 5th Dec, 2017
 
-Recently,  I finised the program in Sumec.
+Recently,  I finished the program in Sumec.
 Though there will be many issues to settle,
 I want to learn something new in order to prepare the Master's degree and make me not be so bored.
 By the way , I can also practice the writing skills in the meanwhile beacuse the IELTS exams is coming LOL.
