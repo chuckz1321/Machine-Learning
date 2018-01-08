@@ -1,6 +1,5 @@
 from NaiveBayesian.mainAlgorithm import *
 
-import turtle
 
 def testNB():
     orginalData, orginalCate = loadDataSet()

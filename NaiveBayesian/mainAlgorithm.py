@@ -77,6 +77,7 @@ def trainNB(trainMatrix,trainCategory):
         for aCata in trainCategory:
             if standCata == aCata : emerge += 1
         catap.append(emerge/float(allCataNums))
+
     #all element init to 1 ,in case of the log(0)
     nums = []  # each element's chance
     pList = []
