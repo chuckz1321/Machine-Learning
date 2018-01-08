@@ -2,6 +2,7 @@
 
 from numpy import *
 
+
 def loadDataSet():
     """
     prepare for the data
@@ -12,9 +13,10 @@ def loadDataSet():
                  ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'],
                  ['stop', 'posting', 'stupid', 'worthless', 'garbage'],
                  ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'],
-                 ['work', 'patience', 'fabulous', 'so', 'food', 'with','team']]
-    cate = [0, 1, 0, 1, 0, 2]    #0 noraml, 1 garbage, 2 good
+                 ['work', 'patience', 'fabulous', 'so', 'food', 'with', 'team']]
+    cate = ['normal', 'garbage', 'normal', 'garbage', 'normal', 'good']    # 0 noraml, 1 garbage, 2 good
     return orginal, cate
+
 
 def createElementList(dataSet):
     """
@@ -26,6 +28,7 @@ def createElementList(dataSet):
     for document in dataSet:
         elementSet = elementSet | set(document)
     return list(elementSet)
+
 
 def setOfElements2Vec(elementList, aDataSet):
     """
@@ -41,6 +44,7 @@ def setOfElements2Vec(elementList, aDataSet):
         else: print("the word: %s is not in elementry dictionary!" % element)
     return aVec
 
+
 def bagOfWords2VecMN(elementList, aDataSet):
     """
     times of the element emerge
@@ -54,6 +58,7 @@ def bagOfWords2VecMN(elementList, aDataSet):
             returnVec[elementList.index(word)] += 1
     return returnVec
 
+
 def trainNB(trainMatrix,trainCategory):
     """
     train the original data and return the probabilities individually
@@ -66,14 +71,14 @@ def trainNB(trainMatrix,trainCategory):
     cataSet = set(trainCategory)
     allCataNums = len(trainCategory)
     cataNums = len(cataSet)
-    catap = [] #each cata's probably
+    catap = []  # each cata's probably
     for standCata in cataSet:
         emerge = 0.0
         for aCata in trainCategory:
             if standCata == aCata : emerge += 1
         catap.append(emerge/float(allCataNums))
     #all element init to 1 ,in case of the log(0)
-    nums = [] #each element's chance
+    nums = []  # each element's chance
     pList = []
     for i in range(cataNums):
         nums.append(ones(numWords))

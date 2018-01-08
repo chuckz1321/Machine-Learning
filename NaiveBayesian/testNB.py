@@ -1,5 +1,7 @@
 from NaiveBayesian.mainAlgorithm import *
 
+import turtle
+
 def testNB():
     orginalData, orginalCate = loadDataSet()
     elementsList = createElementList(orginalData)
@@ -17,5 +19,8 @@ def testNB():
     thisEleArray = array(setOfElements2Vec(elementsList, testEntry))
     print(testEntry, 'classified as: ', classifyNB(thisEleArray, pVec, cateP, orginalCate))
 
+
 if __name__ == '__main__':
     testNB()
+
+
